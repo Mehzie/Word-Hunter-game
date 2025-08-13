@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Word Hunter — Single Player</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">WH</div>
+        <div>
+          <h1>Word Hunter</h1>
+          <p class="muted">Single Player</p>
+        </div>
+      </div>
+      <div class="status">
+        <span id="phase">WAITING</span> • <span id="clock">00:00</span>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card letters">
+        <div class="row space">
+          <div class="letters-box" id="letters"></div>
+          <div class="score">
+            <div>Total</div>
+            <div class="score-num" id="score">0</div>
+          </div>
+        </div>
+        <div class="row">
+          <input id="wordInput" placeholder="Type a word using the letters…" autocomplete="off" />
+          <button id="btnSubmit" class="primary">Submit</button>
+        </div>
+        <small class="muted">Scoring: +2 base; +1 (5), +2 (6), +3 (7), +4 (8+). No repeats in a round.</small>
+      </section>
+
+      <section class="card side">
+        <h3>Used words (this round)</h3>
+        <ul id="usedList" class="list"></ul>
+      </section>
+
+      <section class="card log">
+        <h3>Round Log</h3>
+        <div id="log" class="logbox"></div>
+        <div class="controls">
+          <button id="btnStart" class="accent">Start Round</button>
+          <button id="btnStop" class="danger" disabled>Stop</button>
+          <button id="btnNewSession" class="ghost">Reset Session</button>
+        </div>
+        <div class="muted tips">
+          • 150s per round • Letters reshuffle every 25s • +2 letters at 90s • Reminders at 30s & 15s • 60s break
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
